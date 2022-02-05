@@ -6,54 +6,6 @@ name suggests, fulfill tasks 1 and 2.
     Each separate file (task_1.c/py and task_2.c/py) hold functions used
 primarily for that task.
 
-    ----------------- Program coded using the C language ----------------------
-
-    In C I am using 3 structures, that hold the key values for solving the
-problem:
-
-    struct FILES {
-        char **str;
-        int n;
-    };
-     - holds an array of strings, and the number of strings inside that array
-
-    struct key {
-        char *key;
-        int *occurences;
-        int total;
-    };
-    - holds a string in key, a vector in occurences, which is used to hold the
-integer that tells us how many times that key/string was found inside an email,
-and the total variable which holds the total ammount of occurences.
-
-    struct keywords {
-        struct key *keys;
-        int n;
-    };
-    - holds an array of keys, and the ammount of keys in that array.
-
-    The starts by reading the files found in the data/emails fdirectory and
-stores them inside a FILES structure, then reads the keywords from the
-data/keywords file. It then counts the occurences of each key in each email,
-and builds the data we need to print the statistics required. After task 1
-is done, we clear the memory for the 2nd part of the problem.
-    Task 2 happens similarly, but this time we need to sort the data in
-FILES. We know the emails are named using integers and have an ascending
-order, so we convert the each email name to an integer, forming an integer
-array, we sort that and then put the integer converted as a string into
-the FILES structure.
-    After the sorting is done we read the keywords from the data/keywords
-file and from the additional_keywords file. We get the average size inside
-a variable by calling a function with a similar name and open the the
-prediction.out file using the output handle. We do the counting and open
-a loop that iterates through each file inside the FILES structure and calculate
-the data for each one. We get the keywords score, the email lenght in words and
-int characters, we get the spam value inside the /data/spammers file (0 if not
-found) and check to see weather it has caps characters for more than half of
-all.
-    After that some simple callculation is done, provided in the documentation
-and we print 1 if the score is > 100 and 0 if not.
-
     ----------------- Program coded using the Python language -----------------
 
     In python I am using a files array which holds the filenames, a keywords
